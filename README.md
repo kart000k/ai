@@ -1,32 +1,32 @@
-🤖 AI Assistant (Flask + Gemini)
+AI Assistant (Flask + Gemini)
 
 A modern AI-powered web assistant built using Flask that integrates Google Gemini AI, real-time news APIs, and Wikipedia knowledge, with a clean ChatGPT-style interface.
 
 ---
 
-🚀 Features
+Features
 
-- 🧠 AI Chat (Gemini API)
+- AI Chat (Gemini API)
   Ask anything and get intelligent responses powered by Google Gemini.
 
-- 📰 Real-Time News
+- Real-Time News
   Fetch latest news using GNews API.
 
-- 📘 Wikipedia Knowledge
+- Wikipedia Knowledge
   Get instant summaries for topics like "Who is Elon Musk".
 
-- 🎨 ChatGPT-style UI
+- ChatGPT-style UI
   Clean dark theme with chat bubbles and responsive layout.
 
-- ⚡ Fallback System
+- Fallback System
   If AI fails, app still responds using news/wiki.
 
-- 📱 Mobile Friendly
+- Mobile Friendly
   Works smoothly on phone browsers (Termux compatible).
 
 ---
 
-🛠️ Tech Stack
+Tech Stack
 
 - Backend: Flask (Python)
 - Frontend: HTML, CSS, JavaScript
@@ -37,7 +37,7 @@ A modern AI-powered web assistant built using Flask that integrates Google Gemin
 
 ---
 
-📁 Project Structure
+Project Structure
 
 ai/
 ├── app.py
@@ -51,22 +51,22 @@ ai/
 
 ---
 
-⚙️ Setup Instructions
+Setup Instructions
 
-1️⃣ Clone Repository
+Clone Repository
 
 git clone https://github.com/<your-username>/ai.git
 cd ai
 
 ---
 
-2️⃣ Install Dependencies
+Install Dependencies
 
 pip install -r requirements.txt
 
 ---
 
-3️⃣ Add Environment Variables
+Add Environment Variables
 
 Create a ".env" file:
 
@@ -75,7 +75,7 @@ GNEWS_API_KEY=your_gnews_key
 
 ---
 
-4️⃣ Run the App
+Run the App
 
 python app.py
 
@@ -85,13 +85,13 @@ http://localhost:5000
 
 ---
 
-🔐 Security Note
+Security Note
 
-API keys are stored using environment variables (".env") and not pushed to GitHub.
+API keys are stored using environment variables (".env") and are not pushed to GitHub.
 
 ---
 
-🌐 Deployment
+Deployment
 
 You can deploy this project on:
 
@@ -101,11 +101,10 @@ You can deploy this project on:
 
 ---
 
-🎯 Future Improvements
+Future Improvements
 
-- 💬 Chat history (memory)
-- 👤 User authentication
-- 📊 Dashboard & analytics
-- 📱 Convert to mobile app
-- ⚡ Streaming responses (typing effect)
-
+- Chat history (memory)
+- User authentication
+- Dashboard and analytics
+- Convert to mobile app
+- Streaming responses (typing effect)
