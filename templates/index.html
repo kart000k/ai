@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Assistant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>🤖 AI</h2>
+        <button onclick="newChat()">+ New Chat</button>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="main">
+
+        <div id="chat" class="chat"></div>
+
+        <div class="input-area">
+            <input id="msg" placeholder="Message AI..." />
+            <button onclick="send()">➤</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+let chat = document.getElementById("chat");
+
+async function send() {
+    let msg = document.getElementById("msg").value;
+    if (!msg) return;
+
+    add("user", msg);
+    document.getElementById("msg").value = "";
+
+    let loading = add("bot", "Thinking...");
+
+    let res = await fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: msg})
+    });
+
+    let data = await res.json();
+
+    loading.innerText = data.reply;
+}
+
+function add(role, text) {
+    let div = document.createElement("div");
+    div.className = "msg " + role;
+    div.innerText = text;
+
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+
+    return div;
+}
+
+function newChat() {
+    chat.innerHTML = "";
+}
+
+document.getElementById("msg").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") send();
+});
+</script>
+
+</body>
+</html>
